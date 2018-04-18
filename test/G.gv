@@ -1,0 +1,90 @@
+digraph G {
+	subgraph "cluster-80.111.53.17" {
+		node [color=white style=filled]
+		style=filled
+		color=lightgrey
+		"0-from"
+		"1-from"
+		"10-to"
+		label="80.111.53.17"
+	}
+	subgraph "cluster-ip-172-31-21-52" {
+		node [color=white style=filled]
+		style=filled
+		color=lightgrey
+		"2-from"
+		"2-to"
+		"5-from"
+		"5-to"
+		"6-from"
+		"6-to"
+		"9-from"
+		"9-to"
+		"0-to"
+		"1-to"
+		"10-from"
+		label="ip-172-31-21-52"
+	}
+	subgraph "cluster-34.246.59.142" {
+		node [color=white style=filled]
+		style=filled
+		color=lightgrey
+		"3-from"
+		"4-to"
+		"7-from"
+		"8-to"
+		label="34.246.59.142"
+	}
+	subgraph "cluster-172.31.22.145" {
+		node [color=white style=filled]
+		style=filled
+		color=lightgrey
+		"3-to"
+		"4-from"
+		"7-to"
+		"8-from"
+		label="172.31.22.145"
+	}
+	"0-from" -> "0-to" [label="POST /login HTTP/1.1Host: ec2-34-246-59-142.eu-west-1.compute.am
+azonaws.com:5000User-Agent: python-requests/2.18.4Accept-Encodin
+g: gzip, deflateAccept: */*Connection: keep-aliveContent-Length:
+ 31Content-Type: application/x-www-form-urlencoded"]
+	"1-from" -> "1-to" [label="username=rmurphy&password=12345"]
+	"0-to" -> "1-from"
+	"2-from" -> "2-to" [label=":userubuntudatabasefypclient_encoding'utf-8'"]
+	"1-to" -> "2-from"
+	"3-from" -> "3-to" [label=":userubuntudatabasefypclient_encoding'utf-8'"]
+	"2-to" -> "3-from"
+	"4-from" -> "4-to" [label="RSapplication_nameSclient_encodingUTF8SDateStyleISO, MDYSinteger
+_datetimesonSIntervalStylepostgresSis_superuseronSserver_encodin
+gUTF8Sserver_version9.5.12S!session_authorizationubuntuS#standar
+d_conforming_stringsonSTimeZoneUTCK^PdZI"]
+	"3-to" -> "4-from"
+	"5-from" -> "5-to" [label="RSapplication_nameSclient_encodingUTF8SDateStyleISO, MDYSinteger
+_datetimesonSIntervalStylepostgresSis_superuseronSserver_encodin
+gUTF8Sserver_version9.5.12S!session_authorizationubuntuS#standar
+d_conforming_stringsonSTimeZoneUTCK^PdZI"]
+	"4-to" -> "5-from"
+	"6-from" -> "6-to" [label="QjSELECT username FROM users WHERE username = lower('rmurphy') A
+ND password = crypt('12345', password);"]
+	"5-to" -> "6-from"
+	"7-from" -> "7-to" [label="QjSELECT username FROM users WHERE username = lower('rmurphy') A
+ND password = crypt('12345', password);"]
+	"6-to" -> "7-from"
+	"8-from" -> "8-to" [label="T!username@DrmurphyCSELECT 1ZI"]
+	"7-to" -> "8-from"
+	"9-from" -> "9-to" [label="T!username@DrmurphyCSELECT 1ZI"]
+	"8-to" -> "9-from"
+	"10-from" -> "10-to" [label="HTTP/1.1 200 OKX-Powered-By: ExpressContent-Type: application/js
+on; charset=utf-8Content-Length: 212ETag: W/\"d4-0ZgZX+ro2JLKIuu5
+o2VQxUJsNrc\"Date: Thu, 12 Apr 2018 05:52:59 GMTConnection: keep-
+alive{\"success\":true,\"message\":\"Login successful\",\"token\":\"eyJhb
+GciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InJtdXJwaHkiLCJp
+YXQiOjE1MjM1MTIzNzksImV4cCI6MTUyMzUxNTk3OX0.5oBKVJFZV9RlNtc0UqLI
+GBHchlcWM07vIbA3KaswLYA\"}"]
+	"9-to" -> "10-from"
+	start -> "0-from"
+	"10-to" -> end
+	start [shape=Mdiamond]
+	end [shape=Msquare]
+}

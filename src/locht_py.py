@@ -3,7 +3,8 @@ import logging
 import global_vars
 import os
 import argparse
-import record
+import save
+from record import record
 
 
 def read_config():
@@ -22,6 +23,7 @@ def setup_argparse():
     parser.add_argument('--profile', '-p', action='store', dest="profile")
     parser.add_argument('--record', '-r', action='store_true')
     parser.add_argument('--test', '-t', action='store_true')
+    parser.add_argument('--save', '-s', action='store_true')
     return parser.parse_args()
 
 
@@ -36,4 +38,11 @@ if __name__ == '__main__':
     read_config()
     setup_logger()
     read_profile()
-    record.start_recording()
+
+    lineage = None
+    if global_vars.args.record:
+        lineage = record()
+        if global_vars.args.save:
+            save.save_recording(lineage)
+    if global_vars.args.test:
+        pass
