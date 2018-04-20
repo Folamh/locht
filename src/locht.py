@@ -1,9 +1,11 @@
 import json
 import logging
+from datetime import datetime
 import global_vars
 import os
 import argparse
 import save
+import diagram
 from record import record
 
 
@@ -24,12 +26,19 @@ def setup_argparse():
     parser.add_argument('--record', '-r', action='store_true')
     parser.add_argument('--test', '-t', action='store_true')
     parser.add_argument('--save', '-s', action='store_true')
+    parser.add_argument('--diagram', '-d', action='store_true')
     return parser.parse_args()
 
 
 def read_profile():
     with open(os.path.join(global_vars.dir_path, global_vars.args.profile)) as json_file:
         global_vars.profile = json.load(json_file)
+
+
+def generate_filename(prefix):
+    date = datetime.strftime(datetime.utcnow(), '%Y-%m-%d-%H-%M-%S-%f')
+    profile = global_vars.args.profile.split('/')[-1].split('.')[0]
+    return '{}-{}-{}'.format(prefix, profile, date)
 
 
 if __name__ == '__main__':
@@ -43,6 +52,11 @@ if __name__ == '__main__':
     if global_vars.args.record:
         lineage = record()
         if global_vars.args.save:
-            save.save_recording(lineage)
+            save.save_recording(os.path.join(global_vars.dir_path, 'recordings', generate_filename('recording')),
+                                lineage)
+        if global_vars.args.diagram:
+            diagram.build_graph_from_lineage(os.path.join(global_vars.dir_path, 'graphs',
+                                                          generate_filename('recording')), lineage)
     if global_vars.args.test:
         pass
+
