@@ -1,0 +1,63 @@
+{
+  "hosts": [
+    {
+      "host": "34.246.59.142",
+      "steps": [
+        {
+          "type": "INSTRUCTIONS",
+          "experiment": 1,
+          "port": 5000,
+          "instructions": [
+            {
+              "step": 1,
+              "instruction": "ACCEPT"
+            }
+          ]
+        },
+        {
+          "type": "INSTRUCTIONS",
+          "experiment": 1,
+          "port": 5432,
+          "instructions": [
+            {
+              "step": 1,
+              "instruction": "ACCEPT"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "host": "54.229.38.132",
+      "steps": [
+        {
+          "type": "INSTRUCTIONS",
+          "experiment": 1,
+          "port": 5432,
+          "instructions": [
+            {
+              "step": 1,
+              "instruction": "ACCEPT"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "host": "52.31.144.72",
+      "steps": [
+        {
+          "type": "INSTRUCTIONS",
+          "experiment": 1,
+          "port": 5432,
+          "instructions": [
+            {
+              "step": 1,
+              "instruction": "REJECT"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -6,6 +6,7 @@ import os
 import argparse
 import save
 import diagram
+from experiment import experiment
 from record import record
 
 
@@ -24,21 +25,33 @@ def setup_argparse():
     parser.add_argument('--config', '-c', action='store', default='configs/config.json')
     parser.add_argument('--profile', '-p', action='store', dest="profile")
     parser.add_argument('--record', '-r', action='store_true')
+    parser.add_argument('--lineage', '-l', action='store', dest="lineage")
     parser.add_argument('--test', '-t', action='store_true')
     parser.add_argument('--save', '-s', action='store_true')
     parser.add_argument('--diagram', '-d', action='store_true')
+    parser.add_argument('--instructions', '-i', action='store', dest="instructions")
     return parser.parse_args()
 
 
 def read_profile():
-    with open(os.path.join(global_vars.dir_path, global_vars.args.profile)) as json_file:
-        global_vars.profile = json.load(json_file)
+    if global_vars.args.profile:
+        with open(os.path.join(global_vars.dir_path, global_vars.args.profile)) as json_file:
+            global_vars.profile = json.load(json_file)
 
 
-def generate_filename(prefix):
+def read_instructions():
+    with open(os.path.join(global_vars.dir_path, global_vars.args.instructions)) as json_file:
+        return json.load(json_file)
+
+
+def read_lineage():
+    with open(os.path.join(global_vars.dir_path, global_vars.args.lineage)) as json_file:
+        return json.load(json_file)
+
+
+def generate_filename(prefix, subject):
     date = datetime.strftime(datetime.utcnow(), '%Y-%m-%d-%H-%M-%S-%f')
-    profile = global_vars.args.profile.split('/')[-1].split('.')[0]
-    return '{}-{}-{}'.format(prefix, profile, date)
+    return '{}-{}-{}'.format(prefix, subject, date)
 
 
 if __name__ == '__main__':
@@ -49,6 +62,7 @@ if __name__ == '__main__':
     read_profile()
 
     lineage = None
+    instructions = None
     if global_vars.args.record:
         lineage = record()
         if global_vars.args.save:
@@ -56,7 +70,16 @@ if __name__ == '__main__':
                                 lineage)
         if global_vars.args.diagram:
             diagram.build_graph_from_lineage(os.path.join(global_vars.dir_path, 'graphs',
-                                                          generate_filename('recording')), lineage)
-    if global_vars.args.test:
-        pass
+                                                          generate_filename('recording', global_vars.args.profile
+                                                                            .split('/')[-1].split('.')[0])), lineage)
+    if global_vars.args.lineage:
+        lineage = read_lineage()
+        if global_vars.args.diagram:
+            diagram.build_graph_from_lineage(os.path.join(global_vars.dir_path, 'graphs',
+                                                          generate_filename('diagram', global_vars.args.lineage
+                                                                            .split('/')[-1].split('.')[0])), lineage)
 
+    if global_vars.args.test:
+        if global_vars.args.instructions:
+            instructions = read_instructions()
+            experiment(instructions)

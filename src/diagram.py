@@ -2,7 +2,7 @@ from graphviz import Digraph
 
 
 def build_graph_from_lineage(filename, lineage):
-    diagram = Digraph('G')
+    diagram = Digraph('G', format='png')
     nodes = {}
     ip_ownership = {}
     for key in lineage:
@@ -38,13 +38,20 @@ def build_graph_from_lineage(filename, lineage):
     for key in to_delete:
         nodes.pop(key)
 
+    def get_port(node):
+        step = lineage[node.split('-')[0]]
+        if node.split('-')[1] == 'from':
+            return step['sport']
+        else:
+            return step['dport']
+
     for host in nodes:
         with diagram.subgraph(name='cluster-{}'.format(host)) as subgraph:
             subgraph.attr(style='filled')
             subgraph.attr(color='lightgrey')
             subgraph.node_attr.update(style='filled', color='white')
             for node in nodes[host]:
-                subgraph.node(node, label='Step-{}'.format(node.split('-')[0]))
+                subgraph.node(node, label='Step-{} Port-{}'.format(node.split('-')[0], get_port(node)))
             subgraph.attr(label=host)
 
     final_node = 0

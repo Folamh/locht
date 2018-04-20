@@ -1,0 +1,23 @@
+digraph G {
+	subgraph "cluster-ogma" {
+		node [color=white style=filled]
+		style=filled
+		color=lightgrey
+		"0-from" [label="Step-0 Port-42652"]
+		"0-to" [label="Step-0 Port-55555"]
+		"1-from" [label="Step-1 Port-56993"]
+		"1-to" [label="Step-1 Port-55556"]
+		"2-from" [label="Step-2 Port-54823"]
+		"2-to" [label="Step-2 Port-55557"]
+		label=ogma
+	}
+	"0-from" -> "0-to" [label="data-0"]
+	"1-from" -> "1-to" [label="data-1"]
+	"0-to" -> "1-from" [color=red]
+	"2-from" -> "2-to" [label="data-2"]
+	"1-to" -> "2-from" [color=red]
+	start -> "0-from"
+	"2-to" -> end
+	start [shape=Mdiamond]
+	end [shape=Msquare]
+}
