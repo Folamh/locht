@@ -66,8 +66,9 @@ if __name__ == '__main__':
     if global_vars.args.record:
         lineage = record()
         if global_vars.args.save:
-            save.save_recording(os.path.join(global_vars.dir_path, 'recordings', generate_filename('recording')),
-                                lineage)
+            save.save_recording(os.path.join(global_vars.dir_path, 'recordings',
+                                             generate_filename('recording', global_vars.args.profile
+                                                               .split('/')[-1].split('.')[0])), lineage)
         if global_vars.args.diagram:
             diagram.build_graph_from_lineage(os.path.join(global_vars.dir_path, 'graphs',
                                                           generate_filename('recording', global_vars.args.profile

@@ -19,5 +19,6 @@
         {"port": 5432}
       ]
     }
-  ]
+  ],
+  "transaction": "python /home/rmurphy/Projects/locht/test/showcase.py"
 }

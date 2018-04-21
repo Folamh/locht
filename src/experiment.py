@@ -1,15 +1,17 @@
 import logging
-
+from time import sleep
 import re
 
 import global_vars
 from handle_json import send_json, parse_json
+from transaction import run_transaction
 
 
 def send_instructions(instructions):
     for host in instructions['hosts']:
         full_response = ''
         for instruction in host['steps']:
+            instruction.update({"experiment": global_vars.current_experiment})
             response = send_json(host['host'], 11211, instruction)
             full_response = full_response + response
         full_response = parse_json(full_response)
@@ -65,5 +67,5 @@ def finish_experiment(instructions):
 def experiment(instructions):
     send_instructions(instructions)
     start_experiment(instructions)
-    input('Please run transaction. Press enter when complete...')
+    run_transaction(instructions)
     finish_experiment(instructions)

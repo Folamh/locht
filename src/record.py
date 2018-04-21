@@ -1,8 +1,10 @@
 import logging
 import re
+import subprocess
 
 import global_vars
 from handle_json import send_json, parse_json
+from transaction import run_transaction
 
 
 def start_recording():
@@ -62,15 +64,17 @@ def clean_lineage(lineage):
     step_counter = 0
     for key, value in lineage.items():
         if value not in temp_lineage.values():
-            temp_lineage[step_counter] = value
+            temp_lineage[str(step_counter)] = value
             step_counter = step_counter + 1
     return temp_lineage
 
 
 def record():
+    logging.info('Recording lineage.')
     start_recording()
-    input('Please run transaction. Press enter when complete...')
+    run_transaction(global_vars.profile)
     lineage = finish_recording()
     lineage = sort_and_enumerate(lineage)
     lineage = clean_lineage(lineage)
+    logging.info('Recording finished: {}'.format(lineage))
     return lineage

@@ -1,11 +1,12 @@
 {
+  "transaction": "python /home/rmurphy/Projects/locht/test/showcase.py",
+  "timeout": 4,
   "hosts": [
     {
       "host": "34.246.59.142",
       "steps": [
         {
           "type": "INSTRUCTIONS",
-          "experiment": 1,
           "port": 5000,
           "instructions": [
             {
@@ -16,7 +17,6 @@
         },
         {
           "type": "INSTRUCTIONS",
-          "experiment": 1,
           "port": 5432,
           "instructions": [
             {
@@ -32,7 +32,6 @@
       "steps": [
         {
           "type": "INSTRUCTIONS",
-          "experiment": 1,
           "port": 5432,
           "instructions": [
             {
@@ -48,7 +47,6 @@
       "steps": [
         {
           "type": "INSTRUCTIONS",
-          "experiment": 1,
           "port": 5432,
           "instructions": [
             {
