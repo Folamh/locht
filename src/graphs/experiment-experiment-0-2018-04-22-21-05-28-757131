@@ -1,0 +1,6 @@
+digraph G {
+	start -> "0-from"
+	"0-to" -> end
+	start [shape=Mdiamond]
+	end [shape=Msquare]
+}

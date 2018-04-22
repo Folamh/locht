@@ -32,6 +32,8 @@ def setup_argparse():
                         help='save the lineage recorded.')
     parser.add_argument('-l', '--lineage', action='store', dest="lineage",
                         help='pass in a saved lineage.')
+    parser.add_argument('-d', '--diagram', action='store_true',
+                        help='create a diagram from a lineage.')
     parser.add_argument('-t', '--test', action='store_true',
                         help='test against the system.')
     parser.add_argument('-i', '--instructions', action='store', dest="instructions",
@@ -93,7 +95,7 @@ if __name__ == '__main__':
             if global_vars.args.diagram:
                 diagram.build_graph_from_lineage(os.path.join(
                     global_vars.dir_path, 'graphs',generate_filename(
-                        'experiment', global_vars.args.instructions.split('/')[-1].split('.')[0])), lineage)
+                        'experiment', global_vars.args.instructions.split('/')[-1].split('.')[0])), experiment_lineage)
             if global_vars.args.save:
                 experiment_lineage.update({'results': global_vars.experiment_results})
                 save.save_json(os.path.join(global_vars.dir_path, 'experiments',

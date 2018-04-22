@@ -1,0 +1,73 @@
+digraph G {
+	subgraph "cluster-80.111.53.17" {
+		node [color=white style=filled]
+		style=filled
+		color=lightgrey
+		"0-from" [label="Step-0 Port-47798"]
+		"1-from" [label="Step-1 Port-47798"]
+		"10-to" [label="Step-10 Port-47798"]
+		label="80.111.53.17"
+	}
+	subgraph "cluster-ip-172-31-21-52" {
+		node [color=white style=filled]
+		style=filled
+		color=lightgrey
+		"2-from" [label="Step-2 Port-38538"]
+		"2-to" [label="Step-2 Port-5432"]
+		"5-from" [label="Step-5 Port-5432"]
+		"5-to" [label="Step-5 Port-38538"]
+		"6-from" [label="Step-6 Port-38538"]
+		"6-to" [label="Step-6 Port-5432"]
+		"9-from" [label="Step-9 Port-5432"]
+		"9-to" [label="Step-9 Port-38538"]
+		"0-to" [label="Step-0 Port-5000"]
+		"1-to" [label="Step-1 Port-5000"]
+		"10-from" [label="Step-10 Port-5000"]
+		label="ip-172-31-21-52"
+	}
+	subgraph "cluster-34.246.59.142" {
+		node [color=white style=filled]
+		style=filled
+		color=lightgrey
+		"3-from" [label="Step-3 Port-50194"]
+		"4-to" [label="Step-4 Port-50194"]
+		"7-from" [label="Step-7 Port-50194"]
+		"8-to" [label="Step-8 Port-50194"]
+		label="34.246.59.142"
+	}
+	subgraph "cluster-172.31.22.145" {
+		node [color=white style=filled]
+		style=filled
+		color=lightgrey
+		"3-to" [label="Step-3 Port-5432"]
+		"4-from" [label="Step-4 Port-5432"]
+		"7-to" [label="Step-7 Port-5432"]
+		"8-from" [label="Step-8 Port-5432"]
+		label="172.31.22.145"
+	}
+	"0-from" -> "0-to" [label="data-0"]
+	"1-from" -> "1-to" [label="data-1"]
+	"0-to" -> "1-from" [color=red]
+	"2-from" -> "2-to" [label="data-2"]
+	"1-to" -> "2-from" [color=red]
+	"3-from" -> "3-to" [label="data-3"]
+	"2-to" -> "3-from" [color=red]
+	"4-from" -> "4-to" [label="data-4"]
+	"3-to" -> "4-from" [color=red]
+	"5-from" -> "5-to" [label="data-5"]
+	"4-to" -> "5-from" [color=red]
+	"6-from" -> "6-to" [label="data-6"]
+	"5-to" -> "6-from" [color=red]
+	"7-from" -> "7-to" [label="data-7"]
+	"6-to" -> "7-from" [color=red]
+	"8-from" -> "8-to" [label="data-8"]
+	"7-to" -> "8-from" [color=red]
+	"9-from" -> "9-to" [label="data-9"]
+	"8-to" -> "9-from" [color=red]
+	"10-from" -> "10-to" [label="data-10"]
+	"9-to" -> "10-from" [color=red]
+	start -> "0-from"
+	"10-to" -> end
+	start [shape=Mdiamond]
+	end [shape=Msquare]
+}

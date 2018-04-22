@@ -1,4 +1,5 @@
 {
+  "transaction": "python /home/rmurphy/Projects/locht/test/showcase.py",
   "hosts": [
     {
       "host": "34.246.59.142",
@@ -19,6 +20,5 @@
         {"port": 5432}
       ]
     }
-  ],
-  "transaction": "python /home/rmurphy/Projects/locht/test/showcase.py"
+  ]
 }

@@ -4,6 +4,7 @@ import re
 
 import global_vars
 from handle_json import send_json, parse_json
+from lineage import sort_and_enumerate, clean_lineage
 from transaction import run_transaction
 
 
@@ -65,11 +66,19 @@ def finish_experiment(instructions):
 
 
 def experiment(instructions):
+    logging.info('Starting experiment.')
     send_instructions(instructions)
     start_experiment(instructions)
     process = run_transaction(instructions)
-    if process.returncode == 0 and process:
-        global_vars.experiment_results.append({str(global_vars.current_experiment): 'Success'})
+    if process:
+        if process.returncode == 0:
+            global_vars.experiment_results.append({str(global_vars.current_experiment): 'Success'})
+        else:
+            global_vars.experiment_results.append({str(global_vars.current_experiment): 'Fail'})
     else:
         global_vars.experiment_results.append({str(global_vars.current_experiment): 'Fail'})
-    return finish_experiment(instructions)
+    lineage = finish_experiment(instructions)
+    lineage = sort_and_enumerate(lineage)
+    lineage = clean_lineage(lineage)
+    logging.info('Experiment finished: {}'.format(lineage))
+    return lineage

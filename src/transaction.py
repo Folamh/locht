@@ -9,8 +9,8 @@ def run_transaction(json={}):
 
     if command:
         try:
-            process = subprocess.Popen([command], stdout=subprocess.PIPE, shell=True).communicate(
-                timeout=json.get('timeout', global_vars.config['timeout']))
+            process = subprocess.Popen([command], stdout=subprocess.PIPE, shell=True)
+            output, err = process.communicate(timeout=json.get('timeout', global_vars.config['timeout']))
             logging.info('Transaction complete.')
             return process
         except subprocess.TimeoutExpired:
