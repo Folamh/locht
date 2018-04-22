@@ -22,14 +22,20 @@ def setup_logger():
 
 def setup_argparse():
     parser = argparse.ArgumentParser(description='Locht')
-    parser.add_argument('--config', '-c', action='store', default='configs/config.json')
-    parser.add_argument('--profile', '-p', action='store', dest="profile")
-    parser.add_argument('--record', '-r', action='store_true')
-    parser.add_argument('--lineage', '-l', action='store', dest="lineage")
-    parser.add_argument('--test', '-t', action='store_true')
-    parser.add_argument('--save', '-s', action='store_true')
-    parser.add_argument('--diagram', '-d', action='store_true')
-    parser.add_argument('--instructions', '-i', action='store', dest="instructions")
+    parser.add_argument('-c', '--config', action='store', default='configs/config.json',
+                        help='change default config. Default configs/config.json.')
+    parser.add_argument('-r', '--record', action='store_true',
+                        help='record lineage.')
+    parser.add_argument('-p', '--profile', action='store', dest="profile",
+                        help='profile which to record from.')
+    parser.add_argument('-s', '--save', action='store_true',
+                        help='save the lineage recorded.')
+    parser.add_argument('-l', '--lineage', action='store', dest="lineage",
+                        help='pass in a saved lineage.')
+    parser.add_argument('-t', '--test', action='store_true',
+                        help='test against the system.')
+    parser.add_argument('-i', '--instructions', action='store', dest="instructions",
+                        help='pass instructions to test the system against.')
     return parser.parse_args()
 
 
@@ -66,9 +72,9 @@ if __name__ == '__main__':
     if global_vars.args.record:
         lineage = record()
         if global_vars.args.save:
-            save.save_recording(os.path.join(global_vars.dir_path, 'recordings',
-                                             generate_filename('recording', global_vars.args.profile
-                                                               .split('/')[-1].split('.')[0])), lineage)
+            save.save_json(os.path.join(global_vars.dir_path, 'recordings',
+                                        generate_filename('recording', global_vars.args.profile
+                                                          .split('/')[-1].split('.')[0])), lineage)
         if global_vars.args.diagram:
             diagram.build_graph_from_lineage(os.path.join(global_vars.dir_path, 'graphs',
                                                           generate_filename('recording', global_vars.args.profile
@@ -83,4 +89,13 @@ if __name__ == '__main__':
     if global_vars.args.test:
         if global_vars.args.instructions:
             instructions = read_instructions()
-            experiment(instructions)
+            experiment_lineage = experiment(instructions)
+            if global_vars.args.diagram:
+                diagram.build_graph_from_lineage(os.path.join(
+                    global_vars.dir_path, 'graphs',generate_filename(
+                        'experiment', global_vars.args.instructions.split('/')[-1].split('.')[0])), lineage)
+            if global_vars.args.save:
+                experiment_lineage.update({'results': global_vars.experiment_results})
+                save.save_json(os.path.join(global_vars.dir_path, 'experiments',
+                                            generate_filename('experiment', global_vars.args.instructions.split('/')[-1]
+                                                              .split('.')[0])), experiment_lineage)

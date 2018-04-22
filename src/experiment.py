@@ -67,5 +67,9 @@ def finish_experiment(instructions):
 def experiment(instructions):
     send_instructions(instructions)
     start_experiment(instructions)
-    run_transaction(instructions)
-    finish_experiment(instructions)
+    process = run_transaction(instructions)
+    if process.returncode == 0 and process:
+        global_vars.experiment_results.append({str(global_vars.current_experiment): 'Success'})
+    else:
+        global_vars.experiment_results.append({str(global_vars.current_experiment): 'Fail'})
+    return finish_experiment(instructions)

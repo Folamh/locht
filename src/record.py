@@ -1,6 +1,5 @@
 import logging
 import re
-import subprocess
 
 import global_vars
 from handle_json import send_json, parse_json

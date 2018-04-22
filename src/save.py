@@ -1,7 +1,7 @@
 import json
 
 
-def save_recording(filename, lineage):
+def save_json(filename, json_data):
 
     with open(filename, 'w') as file:
-        json.dump(lineage, file, indent=4)
+        json.dump(json_data, file, indent=4)

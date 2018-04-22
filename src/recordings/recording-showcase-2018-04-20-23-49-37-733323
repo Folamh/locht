@@ -1,0 +1,112 @@
+{
+    "0": {
+        "host": "ip-172-31-21-52",
+        "direction": "INPUT",
+        "src": "80.111.53.17",
+        "sport": 45514,
+        "dst": "172.31.21.52",
+        "dport": 5000,
+        "type": "TCP",
+        "data": "POST /login HTTP/1.1Host: 34.246.59.142:5000User-Agent: python-requests/2.18.4Accept-Encoding: gzip, deflateAccept: */*Connection: keep-aliveContent-Length: 31Content-Type: application/x-www-form-urlencoded"
+    },
+    "1": {
+        "host": "ip-172-31-21-52",
+        "direction": "INPUT",
+        "src": "80.111.53.17",
+        "sport": 45514,
+        "dst": "172.31.21.52",
+        "dport": 5000,
+        "type": "TCP",
+        "data": "username=rmurphy&password=12345"
+    },
+    "2": {
+        "host": "ip-172-31-21-52",
+        "direction": "INPUT",
+        "src": "127.0.0.1",
+        "sport": 33432,
+        "dst": "127.0.0.1",
+        "dport": 5432,
+        "type": "TCP",
+        "data": ":userubuntudatabasefypclient_encoding'utf-8'"
+    },
+    "3": {
+        "host": "ip-172-31-25-217",
+        "direction": "INPUT",
+        "src": "34.246.59.142",
+        "sport": 49396,
+        "dst": "172.31.25.217",
+        "dport": 5432,
+        "type": "TCP",
+        "data": ":userubuntudatabasefypclient_encoding'utf-8'"
+    },
+    "4": {
+        "host": "ip-172-31-25-217",
+        "direction": "OUTPUT",
+        "src": "172.31.25.217",
+        "sport": 5432,
+        "dst": "34.246.59.142",
+        "dport": 49396,
+        "type": "TCP",
+        "data": "RSapplication_nameSclient_encodingUTF8SDateStyleISO, MDYSinteger_datetimesonSIntervalStylepostgresSis_superuseronSserver_encodingUTF8Sserver_version9.5.12S!session_authorizationubuntuS#standard_conforming_stringsonSTimeZoneUTCK(f2ZI"
+    },
+    "5": {
+        "host": "ip-172-31-21-52",
+        "direction": "OUTPUT",
+        "src": "127.0.0.1",
+        "sport": 5432,
+        "dst": "127.0.0.1",
+        "dport": 33432,
+        "type": "TCP",
+        "data": "RSapplication_nameSclient_encodingUTF8SDateStyleISO, MDYSinteger_datetimesonSIntervalStylepostgresSis_superuseronSserver_encodingUTF8Sserver_version9.5.12S!session_authorizationubuntuS#standard_conforming_stringsonSTimeZoneUTCK(f2ZI"
+    },
+    "6": {
+        "host": "ip-172-31-21-52",
+        "direction": "INPUT",
+        "src": "127.0.0.1",
+        "sport": 33432,
+        "dst": "127.0.0.1",
+        "dport": 5432,
+        "type": "TCP",
+        "data": "QjSELECT username FROM users WHERE username = lower('rmurphy') AND password = crypt('12345', password);"
+    },
+    "7": {
+        "host": "ip-172-31-25-217",
+        "direction": "INPUT",
+        "src": "34.246.59.142",
+        "sport": 49396,
+        "dst": "172.31.25.217",
+        "dport": 5432,
+        "type": "TCP",
+        "data": "QjSELECT username FROM users WHERE username = lower('rmurphy') AND password = crypt('12345', password);"
+    },
+    "8": {
+        "host": "ip-172-31-25-217",
+        "direction": "OUTPUT",
+        "src": "172.31.25.217",
+        "sport": 5432,
+        "dst": "34.246.59.142",
+        "dport": 49396,
+        "type": "TCP",
+        "data": "T!username@DrmurphyCSELECT 1ZI"
+    },
+    "9": {
+        "host": "ip-172-31-21-52",
+        "direction": "OUTPUT",
+        "src": "127.0.0.1",
+        "sport": 5432,
+        "dst": "127.0.0.1",
+        "dport": 33432,
+        "type": "TCP",
+        "data": "T!username@DrmurphyCSELECT 1ZI"
+    },
+    "10": {
+        "host": "ip-172-31-21-52",
+        "direction": "OUTPUT",
+        "src": "172.31.21.52",
+        "sport": 5000,
+        "dst": "80.111.53.17",
+        "dport": 45514,
+        "type": "TCP",
+        "data": "HTTP/1.1 200 OKX-Powered-By: ExpressContent-Type: application/json; charset=utf-8Content-Length: 212ETag: W/\"d4-rzy1EnhieJD5bHQ1h8AKKIMectM\"Date: Fri, 20 Apr 2018 23:49:54 GMTConnection: keep-alive{\"success\":true,\"message\":\"Login successful\",\"token\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InJtdXJwaHkiLCJpYXQiOjE1MjQyNjgxOTQsImV4cCI6MTUyNDI3MTc5NH0.904aEtPq6cytTt5kneDxj1d3Q-XFU9XWI3LQB1mS-U8\"}"
+    }
+}

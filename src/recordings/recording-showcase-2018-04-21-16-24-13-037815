@@ -1,0 +1,212 @@
+{
+    "0": {
+        "host": "ip-172-31-22-145",
+        "direction": "OUTPUT",
+        "src": "172.31.22.145",
+        "sport": 5432,
+        "dst": "34.246.59.142",
+        "dport": 45638,
+        "type": "TCP",
+        "data": "RSapplication_nameSclient_encodingUTF8SDateStyleISO, MDYSinteger_datetimesonSIntervalStylepostgresSis_superuseronSserver_encodingUTF8Sserver_version9.5.12S!session_authorizationubuntuS#standard_conforming_stringsonSTimeZoneUTCK64ZI"
+    },
+    "1": {
+        "host": "ip-172-31-21-52",
+        "direction": "OUTPUT",
+        "src": "127.0.0.1",
+        "sport": 5432,
+        "dst": "127.0.0.1",
+        "dport": 33982,
+        "type": "TCP",
+        "data": "RSapplication_nameSclient_encodingUTF8SDateStyleISO, MDYSinteger_datetimesonSIntervalStylepostgresSis_superuseronSserver_encodingUTF8Sserver_version9.5.12S!session_authorizationubuntuS#standard_conforming_stringsonSTimeZoneUTCK64ZI"
+    },
+    "2": {
+        "host": "ip-172-31-22-145",
+        "direction": "OUTPUT",
+        "src": "172.31.22.145",
+        "sport": 5432,
+        "dst": "34.246.59.142",
+        "dport": 45638,
+        "type": "TCP",
+        "data": "T!username@DrmurphyCSELECT 1ZI"
+    },
+    "3": {
+        "host": "ip-172-31-21-52",
+        "direction": "OUTPUT",
+        "src": "127.0.0.1",
+        "sport": 5432,
+        "dst": "127.0.0.1",
+        "dport": 33982,
+        "type": "TCP",
+        "data": "T!username@DrmurphyCSELECT 1ZI"
+    },
+    "4": {
+        "host": "ip-172-31-21-52",
+        "direction": "OUTPUT",
+        "src": "172.31.21.52",
+        "sport": 5000,
+        "dst": "80.111.53.17",
+        "dport": 46350,
+        "type": "TCP",
+        "data": "HTTP/1.1 200 OKX-Powered-By: ExpressContent-Type: application/json; charset=utf-8Content-Length: 212ETag: W/\"d4-xVQddIGqMnOUg9HzyZThN8GpX2I\"Date: Sat, 21 Apr 2018 16:23:01 GMTConnection: keep-alive{\"success\":true,\"message\":\"Login successful\",\"token\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InJtdXJwaHkiLCJpYXQiOjE1MjQzMjc3ODEsImV4cCI6MTUyNDMzMTM4MX0.1v4kPASvLqaQGtD7zO49tMBa9OO9Sf3X3rjtBAHYFvY\"}"
+    },
+    "5": {
+        "host": "ip-172-31-25-217",
+        "direction": "OUTPUT",
+        "src": "172.31.25.217",
+        "sport": 5432,
+        "dst": "34.246.59.142",
+        "dport": 50068,
+        "type": "TCP",
+        "data": "RSapplication_nameSclient_encodingUTF8SDateStyleISO, MDYSinteger_datetimesonSIntervalStylepostgresSis_superuseronSserver_encodingUTF8Sserver_version9.5.12S!session_authorizationubuntuS#standard_conforming_stringsonSTimeZoneUTCK82~ZI"
+    },
+    "6": {
+        "host": "ip-172-31-21-52",
+        "direction": "OUTPUT",
+        "src": "127.0.0.1",
+        "sport": 5432,
+        "dst": "127.0.0.1",
+        "dport": 34104,
+        "type": "TCP",
+        "data": "RSapplication_nameSclient_encodingUTF8SDateStyleISO, MDYSinteger_datetimesonSIntervalStylepostgresSis_superuseronSserver_encodingUTF8Sserver_version9.5.12S!session_authorizationubuntuS#standard_conforming_stringsonSTimeZoneUTCK82~ZI"
+    },
+    "7": {
+        "host": "ip-172-31-25-217",
+        "direction": "OUTPUT",
+        "src": "172.31.25.217",
+        "sport": 5432,
+        "dst": "34.246.59.142",
+        "dport": 50068,
+        "type": "TCP",
+        "data": "T!username@DrmurphyCSELECT 1ZI"
+    },
+    "8": {
+        "host": "ip-172-31-21-52",
+        "direction": "OUTPUT",
+        "src": "127.0.0.1",
+        "sport": 5432,
+        "dst": "127.0.0.1",
+        "dport": 34104,
+        "type": "TCP",
+        "data": "T!username@DrmurphyCSELECT 1ZI"
+    },
+    "9": {
+        "host": "ip-172-31-21-52",
+        "direction": "OUTPUT",
+        "src": "172.31.21.52",
+        "sport": 5000,
+        "dst": "80.111.53.17",
+        "dport": 46360,
+        "type": "TCP",
+        "data": "HTTP/1.1 200 OKX-Powered-By: ExpressContent-Type: application/json; charset=utf-8Content-Length: 212ETag: W/\"d4-C/LVmJGN02AB/sWkEGiWOkMZQJY\"Date: Sat, 21 Apr 2018 16:24:01 GMTConnection: keep-alive{\"success\":true,\"message\":\"Login successful\",\"token\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InJtdXJwaHkiLCJpYXQiOjE1MjQzMjc4NDEsImV4cCI6MTUyNDMzMTQ0MX0.G1vV_ux2LsLBeu7_Ny0UHxF6nAXwg7mMaroD0hOqmrQ\"}"
+    },
+    "10": {
+        "host": "ip-172-31-21-52",
+        "direction": "INPUT",
+        "src": "80.111.53.17",
+        "sport": 46370,
+        "dst": "172.31.21.52",
+        "dport": 5000,
+        "type": "TCP",
+        "data": "POST /login HTTP/1.1Host: 34.246.59.142:5000User-Agent: python-requests/2.18.4Accept-Encoding: gzip, deflateAccept: */*Connection: keep-aliveContent-Length: 31Content-Type: application/x-www-form-urlencoded"
+    },
+    "11": {
+        "host": "ip-172-31-21-52",
+        "direction": "INPUT",
+        "src": "80.111.53.17",
+        "sport": 46370,
+        "dst": "172.31.21.52",
+        "dport": 5000,
+        "type": "TCP",
+        "data": "username=rmurphy&password=12345"
+    },
+    "12": {
+        "host": "ip-172-31-21-52",
+        "direction": "INPUT",
+        "src": "127.0.0.1",
+        "sport": 34162,
+        "dst": "127.0.0.1",
+        "dport": 5432,
+        "type": "TCP",
+        "data": ":userubuntudatabasefypclient_encoding'utf-8'"
+    },
+    "13": {
+        "host": "ip-172-31-22-145",
+        "direction": "INPUT",
+        "src": "34.246.59.142",
+        "sport": 45818,
+        "dst": "172.31.22.145",
+        "dport": 5432,
+        "type": "TCP",
+        "data": ":userubuntudatabasefypclient_encoding'utf-8'"
+    },
+    "14": {
+        "host": "ip-172-31-22-145",
+        "direction": "OUTPUT",
+        "src": "172.31.22.145",
+        "sport": 5432,
+        "dst": "34.246.59.142",
+        "dport": 45818,
+        "type": "TCP",
+        "data": "RSapplication_nameSclient_encodingUTF8SDateStyleISO, MDYSinteger_datetimesonSIntervalStylepostgresSis_superuseronSserver_encodingUTF8Sserver_version9.5.12S!session_authorizationubuntuS#standard_conforming_stringsonSTimeZoneUTCK7(0ZI"
+    },
+    "15": {
+        "host": "ip-172-31-21-52",
+        "direction": "OUTPUT",
+        "src": "127.0.0.1",
+        "sport": 5432,
+        "dst": "127.0.0.1",
+        "dport": 34162,
+        "type": "TCP",
+        "data": "RSapplication_nameSclient_encodingUTF8SDateStyleISO, MDYSinteger_datetimesonSIntervalStylepostgresSis_superuseronSserver_encodingUTF8Sserver_version9.5.12S!session_authorizationubuntuS#standard_conforming_stringsonSTimeZoneUTCK7(0ZI"
+    },
+    "16": {
+        "host": "ip-172-31-21-52",
+        "direction": "INPUT",
+        "src": "127.0.0.1",
+        "sport": 34162,
+        "dst": "127.0.0.1",
+        "dport": 5432,
+        "type": "TCP",
+        "data": "QjSELECT username FROM users WHERE username = lower('rmurphy') AND password = crypt('12345', password);"
+    },
+    "17": {
+        "host": "ip-172-31-22-145",
+        "direction": "INPUT",
+        "src": "34.246.59.142",
+        "sport": 45818,
+        "dst": "172.31.22.145",
+        "dport": 5432,
+        "type": "TCP",
+        "data": "QjSELECT username FROM users WHERE username = lower('rmurphy') AND password = crypt('12345', password);"
+    },
+    "18": {
+        "host": "ip-172-31-22-145",
+        "direction": "OUTPUT",
+        "src": "172.31.22.145",
+        "sport": 5432,
+        "dst": "34.246.59.142",
+        "dport": 45818,
+        "type": "TCP",
+        "data": "T!username@DrmurphyCSELECT 1ZI"
+    },
+    "19": {
+        "host": "ip-172-31-21-52",
+        "direction": "OUTPUT",
+        "src": "127.0.0.1",
+        "sport": 5432,
+        "dst": "127.0.0.1",
+        "dport": 34162,
+        "type": "TCP",
+        "data": "T!username@DrmurphyCSELECT 1ZI"
+    },
+    "20": {
+        "host": "ip-172-31-21-52",
+        "direction": "OUTPUT",
+        "src": "172.31.21.52",
+        "sport": 5000,
+        "dst": "80.111.53.17",
+        "dport": 46370,
+        "type": "TCP",
+        "data": "HTTP/1.1 200 OKX-Powered-By: ExpressContent-Type: application/json; charset=utf-8Content-Length: 212ETag: W/\"d4-uhOvo2M8EMt/fBCqaFesZTuDhMo\"Date: Sat, 21 Apr 2018 16:24:29 GMTConnection: keep-alive{\"success\":true,\"message\":\"Login successful\",\"token\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InJtdXJwaHkiLCJpYXQiOjE1MjQzMjc4NjksImV4cCI6MTUyNDMzMTQ2OX0.XCiUErOyOz9pqgoEigW5Xplu2KROcMwgh67QNHfQxK0\"}"
+    }
+}

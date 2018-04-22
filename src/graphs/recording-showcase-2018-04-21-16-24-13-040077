@@ -1,0 +1,119 @@
+digraph G {
+	subgraph "cluster-172.31.22.145" {
+		node [color=white style=filled]
+		style=filled
+		color=lightgrey
+		"0-from" [label="Step-0 Port-5432"]
+		"2-from" [label="Step-2 Port-5432"]
+		"13-to" [label="Step-13 Port-5432"]
+		"14-from" [label="Step-14 Port-5432"]
+		"17-to" [label="Step-17 Port-5432"]
+		"18-from" [label="Step-18 Port-5432"]
+		label="172.31.22.145"
+	}
+	subgraph "cluster-34.246.59.142" {
+		node [color=white style=filled]
+		style=filled
+		color=lightgrey
+		"0-to" [label="Step-0 Port-45638"]
+		"2-to" [label="Step-2 Port-45638"]
+		"5-to" [label="Step-5 Port-50068"]
+		"7-to" [label="Step-7 Port-50068"]
+		"13-from" [label="Step-13 Port-45818"]
+		"14-to" [label="Step-14 Port-45818"]
+		"17-from" [label="Step-17 Port-45818"]
+		"18-to" [label="Step-18 Port-45818"]
+		label="34.246.59.142"
+	}
+	subgraph "cluster-ip-172-31-21-52" {
+		node [color=white style=filled]
+		style=filled
+		color=lightgrey
+		"1-from" [label="Step-1 Port-5432"]
+		"1-to" [label="Step-1 Port-33982"]
+		"3-from" [label="Step-3 Port-5432"]
+		"3-to" [label="Step-3 Port-33982"]
+		"6-from" [label="Step-6 Port-5432"]
+		"6-to" [label="Step-6 Port-34104"]
+		"8-from" [label="Step-8 Port-5432"]
+		"8-to" [label="Step-8 Port-34104"]
+		"12-from" [label="Step-12 Port-34162"]
+		"12-to" [label="Step-12 Port-5432"]
+		"15-from" [label="Step-15 Port-5432"]
+		"15-to" [label="Step-15 Port-34162"]
+		"16-from" [label="Step-16 Port-34162"]
+		"16-to" [label="Step-16 Port-5432"]
+		"19-from" [label="Step-19 Port-5432"]
+		"19-to" [label="Step-19 Port-34162"]
+		"4-from" [label="Step-4 Port-5000"]
+		"9-from" [label="Step-9 Port-5000"]
+		"10-to" [label="Step-10 Port-5000"]
+		"11-to" [label="Step-11 Port-5000"]
+		"20-from" [label="Step-20 Port-5000"]
+		label="ip-172-31-21-52"
+	}
+	subgraph "cluster-80.111.53.17" {
+		node [color=white style=filled]
+		style=filled
+		color=lightgrey
+		"4-to" [label="Step-4 Port-46350"]
+		"9-to" [label="Step-9 Port-46360"]
+		"10-from" [label="Step-10 Port-46370"]
+		"11-from" [label="Step-11 Port-46370"]
+		"20-to" [label="Step-20 Port-46370"]
+		label="80.111.53.17"
+	}
+	subgraph "cluster-172.31.25.217" {
+		node [color=white style=filled]
+		style=filled
+		color=lightgrey
+		"5-from" [label="Step-5 Port-5432"]
+		"7-from" [label="Step-7 Port-5432"]
+		label="172.31.25.217"
+	}
+	"0-from" -> "0-to" [label="data-0"]
+	"1-from" -> "1-to" [label="data-1"]
+	"0-to" -> "1-from" [color=red]
+	"2-from" -> "2-to" [label="data-2"]
+	"1-to" -> "2-from" [color=red]
+	"3-from" -> "3-to" [label="data-3"]
+	"2-to" -> "3-from" [color=red]
+	"4-from" -> "4-to" [label="data-4"]
+	"3-to" -> "4-from" [color=red]
+	"5-from" -> "5-to" [label="data-5"]
+	"4-to" -> "5-from" [color=red]
+	"6-from" -> "6-to" [label="data-6"]
+	"5-to" -> "6-from" [color=red]
+	"7-from" -> "7-to" [label="data-7"]
+	"6-to" -> "7-from" [color=red]
+	"8-from" -> "8-to" [label="data-8"]
+	"7-to" -> "8-from" [color=red]
+	"9-from" -> "9-to" [label="data-9"]
+	"8-to" -> "9-from" [color=red]
+	"10-from" -> "10-to" [label="data-10"]
+	"9-to" -> "10-from" [color=red]
+	"11-from" -> "11-to" [label="data-11"]
+	"10-to" -> "11-from" [color=red]
+	"12-from" -> "12-to" [label="data-12"]
+	"11-to" -> "12-from" [color=red]
+	"13-from" -> "13-to" [label="data-13"]
+	"12-to" -> "13-from" [color=red]
+	"14-from" -> "14-to" [label="data-14"]
+	"13-to" -> "14-from" [color=red]
+	"15-from" -> "15-to" [label="data-15"]
+	"14-to" -> "15-from" [color=red]
+	"16-from" -> "16-to" [label="data-16"]
+	"15-to" -> "16-from" [color=red]
+	"17-from" -> "17-to" [label="data-17"]
+	"16-to" -> "17-from" [color=red]
+	"18-from" -> "18-to" [label="data-18"]
+	"17-to" -> "18-from" [color=red]
+	"19-from" -> "19-to" [label="data-19"]
+	"18-to" -> "19-from" [color=red]
+	"20-from" -> "20-to" [label="data-20"]
+	"19-to" -> "20-from" [color=red]
+	start -> "0-from"
+	"20-to" -> end
+	start [shape=Mdiamond]
+	end [shape=Msquare]
+}
